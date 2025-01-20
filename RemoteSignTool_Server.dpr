@@ -10,5 +10,8 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TMainForm, MainForm);
+  if FindCmdLineSwitch('autostart', True)
+    and FindCmdLineSwitch('hidden', True) then
+    Application.ShowMainForm := False;
   Application.Run;
 end.
