@@ -101,7 +101,7 @@ begin
       StartupInfo.hStdInput := hReadPipe;
       StartupInfo.hStdOutput := hWritePipe;
       StartupInfo.hStdError := hWritePipe;
-      if Hidden then
+      if  then
         StartupInfo.wShowWindow := SW_HIDE
       else
         StartupInfo.wShowWindow := SW_SHOWNORMAL;
@@ -147,7 +147,7 @@ begin
 end;
 
 
-function SignFile(const SignCmdLine:string; const FileName, CrossCert:string; var ResultMessage:string; hidden:boolean=false):boolean;
+function SignFile(const SignCmdLine:string; const FileName, CrossCert:string; var ResultMessage:string; hidden:boolean=true):boolean;
 var
   rz: Cardinal;
   msg: string;
